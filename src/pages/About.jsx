@@ -250,7 +250,7 @@ const About = () => {
     
         <div className="bg-[#080a1a] text-white relative overflow-hidden about font-sans">
           <main className="relative sm:px-6 max-w-7xl mx-auto flex flex-col items-center"> 
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-cover opacity-10 z-0" />
+            <div className="absolute inset-0 bg-cover opacity-10 z-0" />
 
             <div className="relative z-10 space-y-6 w-full flex flex-col items-center">
               <section className="mb-6 text-center w-full flex flex-col items-center"> 
