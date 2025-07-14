@@ -221,7 +221,7 @@ const About = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="mt-12" // Reduced mt-16 to mt-12
+              className="mt-12" 
             >
               <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400"> // Reduced mb-8 to mb-6
                 {item.title}
@@ -248,11 +248,11 @@ const About = () => {
 
   return (
     <div className="bg-[#080a1a] text-white relative overflow-hidden about font-sans pt-2">
-      <main className="relative px-4 sm:px-6 py-12 max-w-7xl mx-auto flex flex-col items-center"> {}
+      <main className="relative px-4 sm:px-6 py-12 max-w-7xl mx-auto flex flex-col items-center"> 
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-cover opacity-10 z-0" />
 
-        <div className="relative z-10 space-y-6 w-full flex flex-col items-center"> {/* Reduced space-y-16 to space-y-8 */}
-          <section className="mb-6 text-center w-full flex flex-col items-center"> {/* Reduced mb-8 to mb-6 */}
+        <div className="relative z-10 space-y-6 w-full flex flex-col items-center">
+          <section className="mb-6 text-center w-full flex flex-col items-center"> 
             <TextReveal
               phrases={[
                 "---Neural Network Technology--",
@@ -268,7 +268,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent" // Reduced mb-8 to mb-6
+              className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent" 
             >
               About our AI Technology
             </motion.h1>
@@ -303,7 +303,7 @@ const About = () => {
             </div>
           </section>
 
-          <div className="min-h-[40vh] w-full flex flex-col items-center text-center"> {/* Reduced min-h-[50vh] to min-h-[40vh] */}
+          <div className="min-h-[40vh] w-full flex flex-col items-center text-center">
             <motion.section
               key={activeTab}
               initial={{ opacity: 0 }}
@@ -337,7 +337,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 group" // Reduced p-6 to p-5
+                className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 group"
               >
                 <div className="text-3xl mb-3 group-hover:text-teal-400 transition-colors duration-300">
                   {feature.icon}
