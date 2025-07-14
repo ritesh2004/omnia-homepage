@@ -136,7 +136,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-lg leading-relaxed text-gray-300 mb-4"
+              className="text-lg leading-relaxed text-gray-300 mb-4 justify-center"
             >
               {item.text}
             </motion.p>
@@ -223,7 +223,7 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="mt-12" 
             >
-              <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400"> // Reduced mb-8 to mb-6
+              <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
                 {item.title}
               </h3>
               <div className="space-y-4"> 
@@ -231,7 +231,7 @@ const About = () => {
                   <motion.div
                     key={idx}
                     whileHover={{ x: 5 }}
-                    className="border-l-4 border-teal-400 pl-6 py-3 text-left bg-gradient-to-r from-gray-900/50 to-gray-800/30 rounded-r-lg hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300" // Reduced py-4 to py-3
+                    className="border-l-4 border-teal-400 pl-6 py-3 text-left bg-gradient-to-r from-gray-900/50 to-gray-800/30 rounded-r-lg hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300"
                   >
                     <p className="font-medium text-lg text-gray-200 italic">"{testimonial.quote}"</p>
                     <p className="text-gray-400 mt-1">{testimonial.source}</p>
@@ -247,115 +247,117 @@ const About = () => {
   };
 
   return (
-    <div className="bg-[#080a1a] text-white relative overflow-hidden about font-sans pt-2">
-      <main className="relative px-4 sm:px-6 py-12 max-w-7xl mx-auto flex flex-col items-center"> 
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-cover opacity-10 z-0" />
+    
+        <div className="bg-[#080a1a] text-white relative overflow-hidden about font-sans">
+          <main className="relative sm:px-6 max-w-7xl mx-auto flex flex-col items-center"> 
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-cover opacity-10 z-0" />
 
-        <div className="relative z-10 space-y-6 w-full flex flex-col items-center">
-          <section className="mb-6 text-center w-full flex flex-col items-center"> 
-            <TextReveal
-              phrases={[
-                "---Neural Network Technology--",
-                "---Cutting Edge Research---",
-                "---AI-Powered Platform---",
-              ]}
-              color="green"
-              size="text-2xl md:text-2xl justify-center"
-              className="mb-4 font-bold tracking-tight"
-            />
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent" 
-            >
-              About our AI Technology
-            </motion.h1>
-
-            <div className="flex flex-wrap gap-3 mb-6 justify-center relative">
-              {["mission", "team", "review"].map((tab) => (
-                <motion.button
-                  key={tab}
-                  onMouseEnter={() => setHoveredTab(tab)}
-                  onMouseLeave={() => setHoveredTab(null)}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-5 py-2 rounded-full transition-all duration-300 relative overflow-hidden z-10 ${
-                    activeTab === tab
-                      ? "text-white"
-                      : "text-teal-400 hover:text-white"
-                  } font-medium capitalize text-sm`}
+            <div className="relative z-10 space-y-6 w-full flex flex-col items-center">
+              <section className="mb-6 text-center w-full flex flex-col items-center"> 
+                <TextReveal
+                  phrases={[
+                    "---Neural Network Technology--",
+                    "---Cutting Edge Research---",
+                    "---AI-Powered Platform---",
+                  ]}
+                  color="green"
+                  size="text-2xl md:text-2xl justify-center"
+                  className="mb-4 font-bold tracking-tight"
+                />
+                
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent" 
                 >
-                  {tab}
-                  {(hoveredTab === tab || activeTab === tab) && (
-                    <motion.span 
-                      layoutId="tabBackground"
-                      className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full z-[-1]"
-                      initial={false}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  {activeTab !== tab && hoveredTab !== tab && (
-                    <span className="absolute inset-0 border-2 border-teal-400 rounded-full z-[-1]" />
-                  )}
-                </motion.button>
-              ))}
-            </div>
-          </section>
+                  About our AI Technology
+                </motion.h1>
 
-          <div className="min-h-[40vh] w-full flex flex-col items-center text-center">
-            <motion.section
-              key={activeTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8 max-w-4xl w-full" 
-            >
-              {renderContent(tabData[activeTab].content)}
-            </motion.section>
-          </div>
-        </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 max-w-6xl w-full"
-        >
-          <h2 className="text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
-            Why Our AI Stands Out
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 group"
-              >
-                <div className="text-3xl mb-3 group-hover:text-teal-400 transition-colors duration-300">
-                  {feature.icon}
+                <div className="flex flex-wrap gap-3 mb-6 justify-center relative">
+                  {["mission", "team", "review"].map((tab) => (
+                    <motion.button
+                      key={tab}
+                      onMouseEnter={() => setHoveredTab(tab)}
+                      onMouseLeave={() => setHoveredTab(null)}
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-5 py-2 rounded-full transition-all duration-300 relative overflow-hidden z-10 ${
+                        activeTab === tab
+                          ? "text-white"
+                          : "text-teal-400 hover:text-white"
+                      } font-medium capitalize text-sm`}
+                    >
+                      {tab}
+                      {(hoveredTab === tab || activeTab === tab) && (
+                        <motion.span 
+                          layoutId="tabBackground"
+                          className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full z-[-1]"
+                          initial={false}
+                          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                      {activeTab !== tab && hoveredTab !== tab && (
+                        <span className="absolute inset-0 border-2 border-teal-400 rounded-full z-[-1]" />
+                      )}
+                    </motion.button>
+                  ))}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </main>
+              </section>
 
-      <BackgroundBeams />
-    </div>
+              {/* Added border container here */}
+              <div className="min-h-[40vh] w-full flex flex-col items-center text-center justify-center border border-teal-400/30 rounded-xl p-6 bg-gray-900/50 backdrop-blur-sm">
+                <motion.section
+                  key={activeTab}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-8 max-w-4xl w-full"
+                >
+                  {renderContent(tabData[activeTab].content)}
+                </motion.section>
+              </div>
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="mt-16 max-w-6xl w-full"
+            >
+              <h2 className="text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
+                Why Our AI Stands Out
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -10 }}
+                    className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 group"
+                  >
+                    <div className="text-3xl mb-3 group-hover:text-teal-400 transition-colors duration-300">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-300">
+                      {feature.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </main>
+
+          <BackgroundBeams />
+        </div>
   );
 };
 

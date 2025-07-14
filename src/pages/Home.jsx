@@ -15,9 +15,7 @@ const phrases = [
 
 const Home = () => {
   return (
-    <div className="bg-[#080a1a] text-white min-h-screen relative overflow-hidden">
-      {/* Navbar */}
-      <Navbar />
+     <div className="bg-[#080a1a] text-white min-h-screen relative overflow-hidden">
 
       {/* Hero Section */}
       <main className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-4 py-24">
@@ -29,21 +27,10 @@ const Home = () => {
           <Lottie animationData={RobotAnimation} loop={true} className="w-64 h-64 mb-8" />
           <TextReveal phrases={phrases} />
         </div>
-
-        {/* Bottom buttons */}
-       {/* / <div className="absolute left-4 bottom-4 flex gap-4 z-10"> */}
-          {/* <button className="border border-teal-400 text-teal-400 px-6 py-2 rounded-md hover:bg-teal-600 hover:text-white transition">
-            Get Started
-          </button>
-          <button className="border border-teal-400 text-teal-400 px-6 py-2 rounded-md hover:bg-teal-600 hover:text-white transition">
-            Schedule
-          </button>
-        </div> */}
-
       </main>
-      {/* <!-- Background beams effect --> */}
       <BackgroundBeams/>
     </div>
+
   );
 };
 

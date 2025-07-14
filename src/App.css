@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+.container {
+  margin: 0;
+  background-color: #bec0c4;
+  height: 50px;
+  width: 100%;
+}
+.container ul{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 90%;
+}
