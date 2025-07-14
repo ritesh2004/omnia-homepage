@@ -136,7 +136,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-lg leading-relaxed text-gray-300 mb-4" // Reduced mb-6 to mb-4
+              className="text-lg leading-relaxed text-gray-300 mb-4"
             >
               {item.text}
             </motion.p>
@@ -148,7 +148,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400" // Reduced mb-8 to mb-6
+              className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400" 
             >
               {item.text}
             </motion.h2>
@@ -160,11 +160,11 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border-l-4 border-teal-400 text-left shadow-xl hover:shadow-teal-500/20 transition-all duration-300 mb-6" // Reduced mb-8 to mb-6
+              className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border-l-4 border-teal-400 text-left shadow-xl hover:shadow-teal-500/20 transition-all duration-300 mb-6" 
             >
               <p className="italic mb-2 text-teal-300 font-medium">{item.title}:</p>
               <p className="text-gray-200">{item.content}</p>
-              <p className="text-sm text-gray-400 mt-2">{item.footnote}</p> // Reduced mt-3 to mt-2
+              <p className="text-sm text-gray-400 mt-2">{item.footnote}</p>
             </motion.div>
           );
         case "team-members":
@@ -174,16 +174,16 @@ const About = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8" // Reduced gap-8 to gap-6 and mt-12 to mt-8
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8" 
             >
               {item.members.map((member, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ y: -5 }}
-                  className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20" // Reduced p-6 to p-5
+                  className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20" 
                 >
-                  <div className="text-4xl mb-3">{member.icon}</div> // Reduced mb-4 to mb-3
-                  <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400"> // Reduced mb-3 to mb-2
+                  <div className="text-4xl mb-3">{member.icon}</div> 
+                  <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
                     {member.title}
                   </h3>
                   <p className="text-gray-300">{member.description}</p>
@@ -198,15 +198,15 @@ const About = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8" // Reduced gap-8 to gap-6 and mt-12 to mt-8
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8" 
             >
               {item.features.map((feature, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ y: -5 }}
-                  className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20" // Reduced p-6 to p-5
+                  className="bg-gradient-to-b from-gray-900 to-gray-800 p-5 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400"> // Reduced mb-3 to mb-2
+                  <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
                     {feature.title}
                   </h3>
                   <p className="text-gray-300">{feature.description}</p>
@@ -226,7 +226,7 @@ const About = () => {
               <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400"> // Reduced mb-8 to mb-6
                 {item.title}
               </h3>
-              <div className="space-y-4"> // Reduced space-y-6 to space-y-4
+              <div className="space-y-4"> 
                 {item.items.map((testimonial, idx) => (
                   <motion.div
                     key={idx}
@@ -234,7 +234,7 @@ const About = () => {
                     className="border-l-4 border-teal-400 pl-6 py-3 text-left bg-gradient-to-r from-gray-900/50 to-gray-800/30 rounded-r-lg hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300" // Reduced py-4 to py-3
                   >
                     <p className="font-medium text-lg text-gray-200 italic">"{testimonial.quote}"</p>
-                    <p className="text-gray-400 mt-1">{testimonial.source}</p> // Reduced mt-2 to mt-1
+                    <p className="text-gray-400 mt-1">{testimonial.source}</p>
                   </motion.div>
                 ))}
               </div>
@@ -273,7 +273,7 @@ const About = () => {
               About our AI Technology
             </motion.h1>
 
-            <div className="flex flex-wrap gap-3 mb-6 justify-center relative"> {/* Reduced gap-4 to gap-3 and mb-8 to mb-6 */}
+            <div className="flex flex-wrap gap-3 mb-6 justify-center relative">
               {["mission", "team", "review"].map((tab) => (
                 <motion.button
                   key={tab}
@@ -284,7 +284,7 @@ const About = () => {
                     activeTab === tab
                       ? "text-white"
                       : "text-teal-400 hover:text-white"
-                  } font-medium capitalize text-sm`} // Reduced px-6 to px-5, py-3 to py-2
+                  } font-medium capitalize text-sm`}
                 >
                   {tab}
                   {(hoveredTab === tab || activeTab === tab) && (
